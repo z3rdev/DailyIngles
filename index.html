@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily English Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        #daily-word, #daily-phrase, #news { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Daily English Practice</h1>
+    <div id="daily-word"></div>
+    <div id="daily-phrase"></div>
+    <div id="news"></div>
+
+    <script>
+        const words = ['ascertain', 'benevolent', 'candid', 'diligent', 'ephemeral'];
+        const phrases = ['Break the ice', 'A blessing in disguise', 'The best of both worlds', 'Burning the midnight oil', 'Caught between a rock and a hard place'];
+        const newsHeadlines = ['Latest tech trends for 2026', 'New language tools are taking over', 'daily English practice boosts skills!'];
+
+        function getRandomElement(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function loadContent() {
+            document.getElementById('daily-word').innerHTML = `<h2>Word of the Day: ${getRandomElement(words)}</h2>`;
+            document.getElementById('daily-phrase').innerHTML = `<h2>Phrase of the Day: ${getRandomElement(phrases)}</h2>`;
+            document.getElementById('news').innerHTML = `<h2>News Headlines:</h2><ul>${newsHeadlines.map(headline => `<li>${headline}</li>`).join('')}</ul>`;
+        }
+
+        window.onload = loadContent;
+    </script>
+</body>
+</html>
